@@ -1,10 +1,4 @@
-export interface HeaderInfo {
-  secureValue: string | string[] | null;
-  purpose: string;
-  description: string;
-  infoUrl: string;
-  severity: 'Critical' | 'High' | 'Medium' | 'Low';
-}
+import type { HeaderInfo } from '../interfaces/interfaces';
 
 export const HEADERS_LIBRARY: Record<string, Record<string, HeaderInfo>> = {
   CrossOrigin: {
