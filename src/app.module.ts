@@ -2,16 +2,10 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ScanHeadersModule } from './scan-headers/scan-headers.module';
-import { HttpModule } from '@nestjs/axios';
+import { LoadTestingModule } from './load-testing/load-testing.module';
 
 @Module({
-  imports: [
-    ScanHeadersModule,
-    HttpModule.register({
-      timeout: 5000,
-      maxRedirects: 5,
-    }),
-  ],
+  imports: [ScanHeadersModule, LoadTestingModule],
   controllers: [AppController],
   providers: [AppService],
 })
